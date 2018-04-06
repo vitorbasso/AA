@@ -5,6 +5,7 @@
  */
 package counting.sort;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,17 +21,10 @@ public class CountingSort {
     public static void main(String[] args) {
         int vetor [] = {5, 1, 3, 7, 0, 6, 3, 6, 7, 9, 8, 10};
         print(vetor);
-        countingSort(vetor, getMaior(vetor));
+        int max = Arrays.stream(vetor).max().getAsInt();
+        countingSort(vetor, max);
         print(vetor);
         
-    }
-    
-    public static int getMaior(int vetor[]){
-        List<Integer> list = new ArrayList<Integer>();
-        for(int i =0; i < vetor.length; i++){
-            list.add(vetor[i]);
-        }
-        return Collections.max(list);
     }
     
     public static void print(int vetor[]){
